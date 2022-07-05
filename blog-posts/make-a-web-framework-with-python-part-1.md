@@ -2,11 +2,9 @@
 # Part 1
 
 In this first part in this series we will be looking at how to make a web framework.  
-Before we dive in, however, we must look at how the web works.  
-While the web page is loading when you first go here, your browser sends an HTTP Request. Next, the server 
-processes that request and returns an HTTP Response, which is the web page  
-you are looking at. Ok, so you know how the web works, now let's dive  
-in to WSGI.
+Before you start this, you must have a basic understanding of how the web works and  
+a basic understanding of Python, the language we are going to use.  
+Ok, before we get here, you MUST know about WSGI.  
 The Python Web Server Gateway Interface, or WSGI for short, is basically something to mix and match  
 web frameworks and web servers.  
 You can find more about WSGI [here](https://peps.python.org/pep-0333/).
@@ -59,3 +57,5 @@ api = API()
 server = make_server('localhost', 8000, api.app)
 server.serve_forever()
 ```  
+There's a catch. It's not perfect. Found it? It handles every request the same way: It always says  
+"Hello, world!". What if you want to route
