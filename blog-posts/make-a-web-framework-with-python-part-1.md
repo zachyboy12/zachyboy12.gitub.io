@@ -37,7 +37,7 @@ make_server('localhost', 8000, app).serve_forever()
 So, here's the explaination:  
 wsgiref.simple_server helps serve one WSGI application.  
 environ is basically CGI-style variables, which is what I call the request. It is a Python dictionary.  
-start_response is a function, to start the response, hence the name. It takes a status  
+start_response is a function to start the response, hence the name. It takes a status  
 parameter and a headers parameter.  
 make_server makes a simple WSGI server that serves on HOST:PORT and only serves one WSGI app, as mentioned.  
 After this, delete everything in test.py.  
