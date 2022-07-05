@@ -44,7 +44,7 @@ After this, delete everything in test.py.
 Now, let's convert this to a class, since it is much more convenient that way:  
 ```
 class API:  # or whatever you want
-  def app(request, response):
+  def app(self, request, response):
     response("200 OK", [])
     return [b"Hello, world!"]
 ```  
@@ -58,4 +58,57 @@ server = make_server('localhost', 8000, api.app)
 server.serve_forever()
 ```  
 There's a catch. It's not perfect. Found it? It handles every request the same way: It always says  
-"Hello, world!". What if you want to route
+"Hello, world!". What if you want to implement routing?  
+Let's explain first, then code.  
+So, in the request dictionary, there is a key called PATH_INFO, which is the requested path. You can  
+play around with this.  
+Let's do this!  
+```
+class API:  # or whatever you want
+  def app(self, request, response):
+    response("200 OK", [])
+    if request["PATH_INFO"] == '/':  # if the path is the home page
+      return [b"Hello, world!"]
+```  
+Ok, run test.py and see what happens. Did you see it? Cool. Let's move on.  
+So how are we going to let the user route custom routes with custom handlers? Simple. Let's do it!  
+Our plan is to use a Python dictionary; The key for the route and the value for the handler.  
+Over here, we are going to use a decorator to route, and create a runserver function.  
+The handler is gonna have a request param.  
+```
+class API:  # or whatever you want
+  def __init__(self):
+    self.routes = None
+    
+    
+  def route(self, route: str):
+    def wrapper(app):
+      if self.routes is None:
+        self.routes = {route: app}
+      else:
+        self.routes[route] = app
+    return wrapper
+
+
+  def app(self, request, response):
+    response("200 OK", [])
+    return [bytes(str(self.routes[route](request)).encode())]
+    
+    
+  def runserver(self, host='localhost', port=8000):
+    from wsgi.simple_server import make_server
+    server = make_server(host, port, self.app)
+    try:
+      server.serve_forever()
+    except KeyboardInterrupt:
+      server.shutdown()
+```  
+Awesome. Now delete everything inside test.py and add the following:  
+```
+from __init__ import API
+api = API()
+@api.route('/')
+def home(request):
+  return request
+api.runserver()
+```  
