@@ -193,9 +193,9 @@ class API:  # or whatever you want
 
   def app(self, request, response):
     response("200 OK", [])
-    request['CONTENT_TYPE'] = self.routes[route](request).content_type
-    request['CONTENT_LENGTH'] = self.routes[route](request).content_length
-    request['SERVER_PROTOCOL'] = self.routes[route](request).HTTP_version
+    request['CONTENT_TYPE'] = self.routes[request['PATH_INFO']](request).content_type
+    request['CONTENT_LENGTH'] = self.routes[request['PATH_INFO']](request).content_length
+    request['SERVER_PROTOCOL'] = self.routes[request['PATH_INFO']](request).HTTP_version
     return [bytes(str(self.routes[request['PATH_INFO']](request).body).encode())]
     
     
