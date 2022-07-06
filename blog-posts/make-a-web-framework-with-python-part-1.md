@@ -112,3 +112,96 @@ def home(request):
   return request
 api.runserver()
 ```  
+Does this seem familiar? Yes, it's Flask! Let's make this a little more  
+exciting by adding a class called HTTPResponse:  
+```
+class HTTPResponse:
+  def __init__(self, body):
+    self.body = body
+
+
+class API:  # or whatever you want
+  def __init__(self):
+    self.routes = None
+    
+    
+  def route(self, route: str):
+    def wrapper(app):
+      if self.routes is None:
+        self.routes = {route: app}
+      else:
+        self.routes[route] = app
+    return wrapper
+
+
+  def app(self, request, response):
+    response("200 OK", [])
+    return [bytes(str(self.routes[route](request).body).encode())]
+    
+    
+  def runserver(self, host='localhost', port=8000):
+    from wsgi.simple_server import make_server
+    server = make_server(host, port, self.app)
+    try:
+      server.serve_forever()
+    except KeyboardInterrupt:
+      server.shutdown()
+```  
+Once again, it is quite simple: we simply made a simple class called HTTPResponse,  
+and added .body after calling the handler.  
+After this, we should delete everything from test.py and replace it with:  
+```
+from __init__ import API, HTTPResponse
+api = API()
+@api.route('/')
+def home(request):
+  return HTTPResponse(request)
+api.runserver()
+```  
+Now, before we do this, please read this one chapter: [environ Variables](https://peps.python.org/pep-0333/#environ-variables). Did you read it? Let's move on.  
+So, as you recall, there are variables called CONTENT_TYPE, SERVER_PROTOCOL, and CONTENT_LENGTH.  
+Let's add these attributes to the HTTPResponse class, and change this app() class so as to  
+change the CONTENT_TYPE, SERVER_PROTOCOL, and CONTENT_LENGTH variables.  
+```
+class HTTPResponse:
+  def __init__(self, body, content_type='text/html', HTTP_version='HTTP/1.1', charset='utf-8'):
+    self.body = body
+    self.content_type = f"{content_type}; charset={charset}"
+    self.HTTP_version = HTTP_version
+    self.content_length = len(body)
+
+
+class API:  # or whatever you want
+  def __init__(self):
+    self.routes = None
+    
+    
+  def route(self, route: str):
+    def wrapper(app):
+      if self.routes is None:
+        self.routes = {route: app}
+      else:
+        self.routes[route] = app
+    return wrapper
+
+
+  def app(self, request, response):
+    response("200 OK", [])
+    request['CONTENT_TYPE'] = self.routes[route](request).content_type
+    request['CONTENT_LENGTH'] = self.routes[route](request).content_length
+    request['SERVER_PROTOCOL'] = self.routes[route](request).HTTP_version
+    return [bytes(str(self.routes[route](request).body).encode())]
+    
+    
+  def runserver(self, host='localhost', port=8000):
+    from wsgi.simple_server import make_server
+    server = make_server(host, port, self.app)
+    try:
+      server.serve_forever()
+    except KeyboardInterrupt:
+      server.shutdown()
+```  
+This is amazing! We just have the building blocks of a web framework!  
+# Conclusion
+That was amazing. If you like this blog post, be sure to check out two days after this blog  
+post. In the next blog post, I am thinking of exception handlers and 404 handlers.  
