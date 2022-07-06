@@ -1,4 +1,3 @@
-## Zachyboy12
+## My blog posts
 
-Welcome to my home page!
-You can find my blog posts [here](https://zachyboy12.github.io/zachyboy12.gitub.io/blog-posts/).
+[How to Make a Web Framework in Python](https://zachyboy12.github.io/zachyboy12.gitub.io/blog-posts/make-a-web-framework-with-python-part-1)
