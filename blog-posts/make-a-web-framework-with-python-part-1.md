@@ -49,7 +49,7 @@ class API:  # or whatever you want
     return [b"Hello, world!"]
 ```  
 Note: I changed environ to request, and start_response to just response.  
-Now, to run this, just write this code in test.py:
+Now, to run this, write this code in test.py, and go to http://localhost:8000:  
 ```
 from __init__ import API
 from wsgiref.simple_server import make_server
@@ -70,7 +70,8 @@ class API:  # or whatever you want
     if request["PATH_INFO"] == '/':  # if the path is the home page
       return [b"Hello, world!"]
 ```  
-Ok, run test.py and see what happens. Did you see it? Cool. Let's move on.  
+Ok, run test.py, go to http://localhost:8000 and see what happens.  
+Did you see it? Cool. Let's move on.  
 So how are we going to let the user route custom routes with custom handlers? Simple. Let's do it!  
 Our plan is to use a Python dictionary; The key for the route and the value for the handler.  
 Over here, we are going to use a decorator to route, and create a runserver function.  
