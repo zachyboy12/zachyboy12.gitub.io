@@ -276,7 +276,7 @@ def route(self, route: str):
 ...
 ```  
 Good job, everyone!  
-Now, let's add something to runserver(), a message saying "Serving on http://localhost:8000 ...":  
+Finally, let's add something to runserver(), a message saying "Serving on http://localhost:8000 ...":  
 ```
 ...
 def runserver(self, host='localhost', port=8000):
