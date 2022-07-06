@@ -96,7 +96,7 @@ class API:  # or whatever you want
     
     
   def runserver(self, host='localhost', port=8000):
-    from wsgi.simple_server import make_server
+    from wsgiref.simple_server import make_server
     server = make_server(host, port, self.app)
     try:
       server.serve_forever()
@@ -140,7 +140,7 @@ class API:  # or whatever you want
     
     
   def runserver(self, host='localhost', port=8000):
-    from wsgi.simple_server import make_server
+    from wsgiref.simple_server import make_server
     server = make_server(host, port, self.app)
     try:
       server.serve_forever()
@@ -194,7 +194,7 @@ class API:  # or whatever you want
     
     
   def runserver(self, host='localhost', port=8000):
-    from wsgi.simple_server import make_server
+    from wsgiref.simple_server import make_server
     server = make_server(host, port, self.app)
     try:
       server.serve_forever()
