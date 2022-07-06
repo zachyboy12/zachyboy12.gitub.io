@@ -251,6 +251,31 @@ class API:  # or whatever you want
       server.shutdown()
 ```  
 And there you have it.  
+Now, let's make a router function that's __not__ a function:  
+```
+...
+def connect_route(self, route: str):
+    def wrapper(app):
+      def ignore_favicon(request): # /favicon.ico stands for favorite icon
+        return HTTPResponse('')
+      if self.routes is None:
+        self.routes = {route: app, '/favicon.ico': ignore_favicon}
+      else:
+        self.routes[route] = app
+    return wrapper
+...
+```  
+Hey, isn't this the same code in route()?  
+Let's follow the [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) principle and do this:  
+```
+...
+def route(self, route: str):
+    def wrapper(app):
+      self.connect_route(self, route)
+    return wrapper
+...
+```  
+Good job, everyone!  
 Now, let's add something to runserver(), a message saying "Serving on http://localhost:8000 ...":  
 ```
 ...
@@ -265,5 +290,5 @@ def runserver(self, host='localhost', port=8000):
 ...
 ```  
 # Conclusion
-That was short but I liked it.  
+That was an awesome ride, I love it.  
 If you like it, please wait two days for my other blog posts.
