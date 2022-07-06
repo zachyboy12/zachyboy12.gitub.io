@@ -209,7 +209,7 @@ class API:  # or whatever you want
 ```  
 This is amazing! We just have the building blocks of a web framework!  
 But... Here's a catch.  
-It always says:
+It always says, even though it shows properly:
 ```
 request['CONTENT_TYPE'] = self.routes[request['PATH_INFO']](request).content_type
 AttributeError: 'str' object has no attribute 'content_type
