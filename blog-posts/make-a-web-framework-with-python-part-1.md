@@ -92,7 +92,7 @@ class API:  # or whatever you want
 
   def app(self, request, response):
     response("200 OK", [])
-    return [bytes(str(self.routes[route](request)).encode())]
+    return [bytes(str(self.routes[request['PATH_INFO']](request)).encode())]
     
     
   def runserver(self, host='localhost', port=8000):
@@ -113,7 +113,7 @@ def home(request):
 api.runserver()
 ```  
 Does this seem familiar? Yes, it's Flask! Let's make this a little more  
-exciting by adding a class called HTTPResponse:  
+original by adding a class called HTTPResponse:  
 ```
 class HTTPResponse:
   def __init__(self, body):
@@ -136,7 +136,7 @@ class API:  # or whatever you want
 
   def app(self, request, response):
     response("200 OK", [])
-    return [bytes(str(self.routes[route](request).body).encode())]
+    return [bytes(str(self.routes[request['PATH_INFO']](request).body).encode())]
     
     
   def runserver(self, host='localhost', port=8000):
@@ -190,7 +190,7 @@ class API:  # or whatever you want
     request['CONTENT_TYPE'] = self.routes[route](request).content_type
     request['CONTENT_LENGTH'] = self.routes[route](request).content_length
     request['SERVER_PROTOCOL'] = self.routes[route](request).HTTP_version
-    return [bytes(str(self.routes[route](request).body).encode())]
+    return [bytes(str(self.routes[request['PATH_INFO']](request).body).encode())]
     
     
   def runserver(self, host='localhost', port=8000):
