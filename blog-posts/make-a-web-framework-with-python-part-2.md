@@ -291,4 +291,6 @@ def runserver(self, host='localhost', port=8000):
 ```  
 # Conclusion
 That was an awesome ride, I love it.  
+In my next post, I'll probably go into either making a simple Template engine, or a Database class  
+for data storage.  
 If you like it, please wait two days for my other blog posts.
