@@ -208,6 +208,13 @@ class API:  # or whatever you want
       server.shutdown()
 ```  
 This is amazing! We just have the building blocks of a web framework!  
+But... Here's a catch.  
+It always says:
+```
+request['CONTENT_TYPE'] = self.routes[request['PATH_INFO']](request).content_type
+AttributeError: 'str' object has no attribute 'content_type
+```  
+And, because I'm late, we'll have to do this in part 2.
 # Conclusion
 That was amazing. If you like this blog post, be sure to check out two days after this blog  
 post. In the next blog post, I think I am going to do exception and 404 handlers.  
