@@ -6,8 +6,8 @@
 
 ## Repositories
 
-[R+: The most random generator](https://github.com/zachyboy12/rplus)
-[Nebula Star Code: A simple IDE](https://github.com/zachyboy12/NebulaStarCode)
-[A WSGI Web framework: Mythjiv](https://github.com/zachyboy12/mythjiv)
-[Soar high into the sky---Without HTML: Griffin](https://github.com/zachyboy12/griffin)
-[A .txt file manager: Sql.txt (Sqltxt)](https://github.com/zachyboy12/sqltxt)
+[R+: The most random generator](https://github.com/zachyboy12/rplus)  
+[Nebula Star Code: A simple IDE](https://github.com/zachyboy12/NebulaStarCode)  
+[A WSGI Web framework: Mythjiv](https://github.com/zachyboy12/mythjiv)  
+[Soar high into the sky---Without HTML: Griffin](https://github.com/zachyboy12/griffin)  
+[A .txt file manager: Sql.txt (Sqltxt)](https://github.com/zachyboy12/sqltxt)  
