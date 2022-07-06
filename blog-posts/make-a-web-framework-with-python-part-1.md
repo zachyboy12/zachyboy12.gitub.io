@@ -9,7 +9,7 @@ The Python Web Server Gateway Interface, or WSGI for short, is basically somethi
 web frameworks and web servers.  
 You can find more about WSGI [here](https://peps.python.org/pep-0333/).
 So, WSGI is all well and good, but how do you actually DO it?  
-Create a folder named your framework. I named mine apiwsgi:  
+Open your terminal to create a folder named your framework. I named mine apiwsgi:  
 ```
 $ mkdir apiwsgi
 ```  
@@ -21,7 +21,7 @@ Then create another file named test.py:
 ```
 $ touch test.py
 ```  
-Now, let's code in test.py first and then explain.  
+Now, let's open the file editor of your choice, code in test.py, and then explain.  
 ```
 from wsgiref.simple_server import make_server
 
@@ -204,4 +204,4 @@ class API:  # or whatever you want
 This is amazing! We just have the building blocks of a web framework!  
 # Conclusion
 That was amazing. If you like this blog post, be sure to check out two days after this blog  
-post. In the next blog post, I am thinking of exception handlers and 404 handlers.  
+post. In the next blog post, I think I am going to do exception and 404 handlers.  
