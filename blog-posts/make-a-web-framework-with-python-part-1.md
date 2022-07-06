@@ -131,7 +131,7 @@ class API:  # or whatever you want
   def route(self, route: str):
     def wrapper(app):
       def ignore_favicon(request): # /favicon.ico stands for favorite icon
-        return ''
+        return HTTPResponse('')
       if self.routes is None:
         self.routes = {route: app, '/favicon.ico': ignore_favicon}
       else:
@@ -184,7 +184,7 @@ class API:  # or whatever you want
   def route(self, route: str):
     def wrapper(app):
       def ignore_favicon(request): # /favicon.ico stands for favorite icon
-        return ''
+        return HTTPResponse('')
       if self.routes is None:
         self.routes = {route: app, '/favicon.ico': ignore_favicon}
       else:
