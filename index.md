@@ -3,7 +3,7 @@
 ## My blog posts
 
 [How to Make a Web Framework in Python: Part 1](https://zachyboy12.github.io/zachyboy12.gitub.io/blog-posts/make-a-web-framework-with-python-part-1)  
-[How to Make a Web Framework in Python: Part 2](https://zachyboy12.github.io/zachyboy12.github.io/blog-posts/make-a-web-framework-with-python-part-2)  
+[How to Make a Web Framework in Python: Part 2](https://zachyboy12.github.io/zachyboy12.gitub.io/blog-posts/make-a-web-framework-with-python-part-2)  
 
 ## Repositories
 
