@@ -51,7 +51,7 @@ class Templater:
 ```  
 Simple, wasn't it? We simply iterated over names_and_values, made new_contents equal to the  
 original file contents, and replaced the beginning tag plus the key plus the end tag with the value of  
-the key in the dictionary.  
+the key in the dictionary. Finally, we opened the file and wrote new_contents to the file.  
 Ok, so now we got this method, now let's add a for loop method:  
 ```
 
