@@ -153,7 +153,7 @@ class API:  # or whatever you want
       server.shutdown()
 ```  
 Once again, it is quite simple: we simply made a simple class called HTTPResponse,  
-and added .body after calling the handler.  
+and added .body after calling the handler in the route() method.  
 After this, we should delete everything from test.py and replace it with:  
 ```
 from __init__ import API, HTTPResponse
