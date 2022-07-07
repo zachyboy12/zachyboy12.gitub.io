@@ -10,7 +10,6 @@ In this second part, we are going to do:
 - Make a function to configure an exception handler
 - Make a function to configure a 404 not found handler
 - Make an alternative function to route, which is not a decorator
-- Make runserver print where the server is serving at
 
 Let's dive in!  
 So, let's remember our original code in __init__.py:  
@@ -276,20 +275,6 @@ def route(self, route: str):
 ...
 ```  
 Good job, everyone!  
-Finally, let's add something to runserver(), a print message saying "Serving on http://localhost:8000 ...":  
-```
-...
-def runserver(self, host='localhost', port=8000):
-    from wsgiref.simple_server import make_server
-    print(f"Serving on http://{host}:{port} ...")
-    server = make_server(host, port, self.app)
-    try:
-      server.serve_forever()
-    except KeyboardInterrupt:
-      server.shutdown()
-...
-```  
-(Note: I forgot to add the print statement in part 1)  
 # Conclusion
 That was an awesome ride, I love it.  
 In my next post, I'll probably go into either making a simple Template engine, or a Database class  
