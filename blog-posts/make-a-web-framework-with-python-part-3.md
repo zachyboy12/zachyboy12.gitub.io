@@ -22,11 +22,37 @@ def connect_route(self, route: str):
       if self.routes is None:
         self.routes = {route: app, '/favicon.ico': ignore_favicon}
       else:
-        assert route in self.routes, "Cannot route a path twice."
+        assert route in self.routes, "Cannot route a path twice."  # if the given statement (route in self.routes) isn't true, raise an AssertionError, with a message saying "Cannot route a path twice."
         self.routes[route] = app
     return wrapper
 ...
 ```  
 Ok. Now let's make a Template engine. I named mine Templater:  
 ```
+...
+class Templater:
+    def __init__(self, filepath):
+        self.__file = filepath  # Making variable private
+...
 ```  
+Cool, right? Now let's add some methods.  
+The first method we are gonna do is to render values to the file, and to do this we are gonna use a dictionary:  
+```
+class Templater:
+    def __init__(self, filepath):
+        self.__file = filepath  # Making variable private (two underscores at the beginning)
+        
+    def render_values(self, names_and_values):  # names_and_values is the context of the template
+        filecontents = open(self.__file).read()
+        new_contents = ''
+        for key in names_and_values:
+            new_contents = filecontents.replace('[% ' + key + ' %]', names_and_values.get(key))
+        open(self.__file, 'w').write(new_contents)
+```  
+Simple, wasn't it? We simply iterated over names_and_values, made new_contents equal to the  
+original file contents, and replaced the beginning tag plus the key plus the end tag with the value of  
+the key in the dictionary.  
+Ok, so now we got this method, now let's add a for loop method:  
+```
+
+```
