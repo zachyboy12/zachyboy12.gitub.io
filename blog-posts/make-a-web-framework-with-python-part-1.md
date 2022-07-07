@@ -100,6 +100,7 @@ class API:  # or whatever you want
     
   def runserver(self, host='localhost', port=8000):
     from wsgiref.simple_server import make_server
+    print(f'Serving on http://{host}:{port} ...')
     server = make_server(host, port, self.app)
     try:
       server.serve_forever()
