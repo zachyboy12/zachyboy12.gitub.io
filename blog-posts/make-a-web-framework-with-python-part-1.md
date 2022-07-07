@@ -5,7 +5,7 @@ In this first part in this series we will be looking at how to make a web framew
 Before you start this, you must have a basic understanding of how the web works and  
 a basic understanding of Python, the language we are going to use.  
 Ok, before we get here, you MUST know about WSGI.  
-The Python Web Server Gateway Interface, or WSGI for short, is basically something to mix and match  
+The Python Web Server Gateway Interface, or WSGI for short, is basically something to comunnicate with  
 web frameworks and web servers.  
 You can find more about WSGI [here](https://peps.python.org/pep-0333/).
 So, WSGI is all well and good, but how do you actually do it?  
