@@ -145,5 +145,5 @@ Does a for loop.
 filepath - The path to the template.  
 beginning_line_to_forloop - The line number to begin for for looping.
 ending_line_to_forloop - The ending line number to begin for for looping.  
-line_to_insert - The beginning line number to insert results of for loop.
+line_to_insert - The beginning line number to insert results of for loop.  
 times - How many times it is supposedly for looped.  
