@@ -14,4 +14,5 @@
 [A text file manager: Sql.txt (Sqltxt)](https://github.com/zachyboy12/sqltxt)  
 
 
-You can find reflections [here](https://zachyboy12.github.io/zachyboy12.gitub.io/daily-reflections-from-a-mother).
+You can find reflections [here](https://zachyboy12.github.io/zachyboy12.gitub.io/daily-reflections-from-a-mother).  
+You can also find docs for some of my repos [here](https://zachyboy12.github.io/zachyboy12.gitub.io/docs/).  
