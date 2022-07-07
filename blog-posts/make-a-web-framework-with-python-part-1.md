@@ -41,7 +41,7 @@ start_response is a function to start the response, hence the name. It takes a s
 parameter and a headers parameter.  
 make_server makes a simple WSGI server that serves on HOST:PORT and only serves one WSGI app, as mentioned.  
 After this, delete everything in test.py.  
-Now, let's convert this to a class, since it is much more convenient that way:  
+Now, relocate to __init__.py and convert this to a class, since it is much more convenient that way:  
 ```
 class API:  # or whatever you want
   def app(self, request, response):
