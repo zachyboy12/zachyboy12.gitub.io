@@ -143,7 +143,7 @@ class Database:
     unsaved_changes = ''
     for line in self.__database:
       unsaved_changes += ' '.join(line)  # Joining line items with a space in between them
-    return full
+    return unsaved_changes
 ```  
 Wouldn't it be easier to just call a method to get the current contents of the database,  
 instead of having to do the built-in open function all over again?  
@@ -182,7 +182,7 @@ class Database:
     unsaved_changes = ''
     for line in self.__database:
       unsaved_changes += ' '.join(line)  # Joining line items with a space in between them
-    return full
+    return unsaved_changes
     
   def get(self):
     return open(self.__file).read()
@@ -223,7 +223,7 @@ class Database:
     unsaved_changes = ''
     for line in self.__database:
       unsaved_changes += ' '.join(line)  # Joining line items with a space in between them
-    return full
+    return unsaved_changes
     
   def get(self):
     return open(self.__file).read()
@@ -272,7 +272,7 @@ class Database:
     unsaved_changes = ''
     for line in self.__database:
       unsaved_changes += ' '.join(line)  # Joining line items with a space in between them
-    return full
+    return unsaved_changes
     
   def get(self):
     return open(self.__file).read()
