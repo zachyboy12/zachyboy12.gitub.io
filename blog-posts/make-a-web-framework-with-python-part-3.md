@@ -84,9 +84,9 @@ class Templater:
         open(self.__file, 'w').write(''.join(new_contents))
 ```  
 Whew! That was a tough ride!  
-I have an exercise for you.  
+Now, I have an exercise for you.  
 Make an if_statement method for if statements in the Templater (or whatever you called it) class.  
-Done? Cool. You just made your first simple Template engine!  
+Done? Cool, and congrats. You just made your first simple Template engine!  
 # Conclusion
 That was short but I loved it. If you liked this blog post, be sure to stay tuned, because  
 in my final part in this series, we are going to build a Database class to store and get data.  
