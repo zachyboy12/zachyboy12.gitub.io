@@ -2,7 +2,7 @@
 # Part 4
 [Part 1](https://zachyboy12.github.io/zachyboy12.gitub.io/blog-posts/make-a-web-framework-with-python-part-1)  
 [Part 2](https://zachyboy12.github.io/zachyboy12.gitub.io/blog-posts/make-a-web-framework-with-python-part-2)  
-Part 3's features were:
+[Part 3](https://zachyboy12.github.io/zachyboy12.gitub.io/blog-posts/make-a-web-framework-with-python-part-3)'s features were:
 - Raising error when routing existing route
 - Making simple Template engine
 
