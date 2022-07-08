@@ -224,3 +224,4 @@ This is amazing! We just have the building blocks of a web framework!
 That was amazing. If you like this blog post, be sure to check out two days after this blog  
 post. In the next blog post, I think I am going to do exception and 404 handlers.  
 [Part 2](https://zachyboy12.github.io/zachyboy12.gitub.io/blog-posts/make-a-web-framework-with-python-part-2)
+[Part 3](https://zachyboy12.github.io/zachyboy12.gitub.io/blog-posts/make-a-web-framework-with-python-part-3)
