@@ -2,7 +2,7 @@
 # Part 2
 
 [Part 1](https://zachyboy12.github.io/zachyboy12.gitub.io/blog-posts/make-a-web-framework-with-python-part-1)  
-[Part 3](https://zachyboy12.github.io/zachyboy12.gitub.io/blog-posts/make-a-web-framework-witn-python-part-3)  
+[Part 3](https://zachyboy12.github.io/zachyboy12.gitub.io/blog-posts/make-a-web-framework-with-python-part-3)  
 In the first part of How to Make a Web Framework with Python, we did:  
 - Made a WSGI server function
 - Made a router
